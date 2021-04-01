@@ -25,8 +25,10 @@ sudo docker pull wurstmeister/kafka
 
 ## 查看信息
 1. 查看zookeeper下broker节点数量  
+    ```
     执行docker exec -it (zookeeper启动容器id) /bin/bash      
     进入bin/目录下，执行zkCli.sh，在执行 ls /brokers/ids即可查看    
+    ```
 
 2. 查看分区分区分配方案  
  ![avatar](img/brokerlist.png)  
