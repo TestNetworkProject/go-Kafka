@@ -1,8 +1,11 @@
 # go-Kafka
 此demo是学习和创建分布式kafka系统，运行环境为docker  
-## 安装镜像
+## 安装镜像  
+```
 sudo docker pull wurstmeister/zookeeper  
 sudo docker pull wurstmeister/kafka  
+```
+
 ## 启动容器
 1. zookeeper启动:  
     ```
