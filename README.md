@@ -5,16 +5,21 @@ sudo docker pull wurstmeister/zookeeper
 sudo docker pull wurstmeister/kafka  
 ## 启动容器
 1. zookeeper启动:  
-    ```docker run -d  -p 2181:2181 --name zookeeper wurstmeister/zookeeper  
+    ```
+    docker run -d  -p 2181:2181 --name zookeeper wurstmeister/zookeeper  
     备注：2181 为zookeeper对外开放端口，如果需要修改，执行docker exec -it (zookeeper启动容器id) /bin/bash,修改conf/zoo.cfg 
     配置文件  
     ```
 
-2. 启动第一个broker:    
-    docker run -d -p 9092:9092 --link zookeeper --env KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181 --env  KAFKA_ADVERTISED_HOST_NAME=127.0.0.1 --env KAFKA_ADVERTISED_PORT=9092 wurstmeister/kafka:latest  
+2. 启动第一个broker:   
+    ``` 
+    docker run -d -p 9092:9092 --link zookeeper --env KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181 --env  KAFKA_ADVERTISED_HOST_NAME=127.0.0.1 --env              KAFKA_ADVERTISED_PORT=9092 wurstmeister/kafka:latest  
+    ```
 
 3. 启动第二个broker:    
-   docker run -d -p 9093:9093 --link zookeeper --env KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181 --env  KAFKA_ADVERTISED_HOST_NAME=127.0.0.1 --env KAFKA_ADVERTISED_PORT=9093 wurstmeister/kafka:9093
+    ```
+   docker run -d -p 9093:9093 --link zookeeper --env KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181 --env  KAFKA_ADVERTISED_HOST_NAME=127.0.0.1 --env KAFKA_ADVERTISED_PORT=9093 wurstmeister/kafka:9093  
+   ```
 
 ## 查看信息
 1. 查看zookeeper下broker节点数量  
