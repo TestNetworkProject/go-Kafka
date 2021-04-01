@@ -34,7 +34,9 @@ sudo docker pull wurstmeister/kafka
     ```
 
 2. 查看分区分区分配方案  
+
  ![avatar](img/brokerlist.png)  
 
 3. 查看主题分区分配细节  
+
  ![avatar](img/topicinfo.png)    
