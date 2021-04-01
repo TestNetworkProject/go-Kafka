@@ -13,12 +13,14 @@ sudo docker pull wurstmeister/kafka
 
 2. 启动第一个broker:   
     ``` 
-    docker run -d -p 9092:9092 --link zookeeper --env KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181 --env  KAFKA_ADVERTISED_HOST_NAME=127.0.0.1 --env              KAFKA_ADVERTISED_PORT=9092 wurstmeister/kafka:latest  
+    docker run -d -p 9092:9092 --link zookeeper --env KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181 --env  KAFKA_ADVERTISED_HOST_NAME=127.0.0.1 --env  
+    KAFKA_ADVERTISED_PORT=9092 wurstmeister/kafka:latest  
     ```
 
 3. 启动第二个broker:    
     ```
-   docker run -d -p 9093:9093 --link zookeeper --env KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181 --env  KAFKA_ADVERTISED_HOST_NAME=127.0.0.1 --env KAFKA_ADVERTISED_PORT=9093 wurstmeister/kafka:9093  
+   docker run -d -p 9093:9093 --link zookeeper --env KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181 --env  KAFKA_ADVERTISED_HOST_NAME=127.0.0.1 --env  
+   KAFKA_ADVERTISED_PORT=9093 wurstmeister/kafka:9093  
    ```
 
 ## 查看信息
